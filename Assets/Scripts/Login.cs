@@ -11,15 +11,16 @@ public class Login : MonoBehaviour
     public Text Email;
     public Text PassWord;
     public Text Error;
+   public int aux;
     void Start()
     {
-        
+      //  GameManager.instance.Habilitado = aux;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+      //  GameManager.instance.Habilitado = aux;
     }
 
     public void OnCLickLogin() {
@@ -49,8 +50,16 @@ public class Login : MonoBehaviour
                     else {
                         print(webrequest.downloadHandler.text);
                         Player player = JsonUtility.FromJson<Player>(webrequest.downloadHandler.text);
+                        for (int i = 0; i < player.playerSkins.Length; i++)
+                        {
+                            aux++;
+                            
+                             GameManager.instance.Habilitado=aux;
+                            //Debug.Log(GameManager.instance.Habilitado);
+                        }
+                       
                         GameManager.instance.playerData = player;
-                        SceneManager.LoadScene(1);
+                    SceneManager.LoadScene(1);
                     }
                     break;
 

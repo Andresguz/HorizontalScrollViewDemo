@@ -88,7 +88,7 @@ public class GetSkinsScrollView : MonoBehaviour
     {
         levelNumberText.text = "SkinId: " + (id);
         StartCoroutine(BuySkin("http://localhost:8242/api/playerSkins", id));
-        GameManager.instance.skinstiene++;
+        //GameManager.instance.Habilitado++;
     }
 
     public void OnButtonClickRefresh()

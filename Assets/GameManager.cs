@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public Player playerData;
     public Skin[] availableSkins;
-    public int skinstiene=0;
+    public int Habilitado;
     // Start is called before the first frame update
     void Awake()
     {
